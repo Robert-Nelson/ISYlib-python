@@ -58,9 +58,8 @@ def et2d(et):
     if not isinstance(et, ET.Element):
         return d
     children = list(et)
-    if et.attrib:
-        for k, v in list(et.items()):
-            d[et.tag + "-" + k] = v
+    for k, v in list(et.items()):
+        d[et.tag + "-" + k] = v
     if children:
         for child in children:
             if child.tag in d:
@@ -123,7 +122,7 @@ class IsyUtil(object):
             # print("res.getcode() ", res.getcode(), len(data))
             res.close()
         except HTTPError as e:
-            self.error_str = str("Reponse Code: {0} : {1}").format(e.code, xurl)
+            self.error_str = str("Response Code: {0} : {1}").format(e.code, xurl)
             return None
 
         if len(self.error_str):

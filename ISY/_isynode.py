@@ -799,14 +799,14 @@ def _updatenode(self, naddr):
             for k, v in list(child.items()):
                 self._nodedict[naddr][child.tag + "-" + k] = v
 
-        for prop in _nodestat.iter('property'):
-            tprop = dict()
-            for k, v in prop.items():
-                tprop[k] = v
-            if "id" in tprop:
-                self._nodedict[naddr]["property"][tprop["id"]].update(tprop)
+    for prop in _nodestat.iter('property'):
+        tprop = dict()
+        for k, v in prop.items():
+            tprop[k] = v
+        if "id" in tprop:
+            self._nodedict[naddr]["property"][tprop["id"]].update(tprop)
 
-        #self._nodedict[naddr]["property"]["time"] = time.gmtime()
+    #self._nodedict[naddr]["property"]["time"] = time.gmtime()
 
 
 #

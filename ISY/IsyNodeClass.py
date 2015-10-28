@@ -228,7 +228,7 @@ class IsyNode(_IsyNodeBase):
             represent a deleteed node
 
     """
-    _getlist = ['address', 'enabled', 'formatted',
+    _getlist = ['address', 'enabled', 'formatted', 'family',
                 'ELK_ID',
                 'parent', 'parent-type',
                 'name', 'pnode', 'flag', 'wattage',
